@@ -14,7 +14,7 @@ namespace TextData.Tests
         [TestCase("HackersDictionary")]
         [TestCase("LotsOfText")]
         [TestCase("Lovecraft")]
-        public void Get_ShouldReturnResourceForValidNames(string name)
+        public void Get_ShouldReturnResource_ForValidName(string name)
         {
             Assert.That(TextResource.Get(name), Is.Not.Null);
         }
@@ -22,7 +22,7 @@ namespace TextData.Tests
         [TestCase("HackersDictionary")]
         [TestCase("LotsOfText")]
         [TestCase("Lovecraft")]
-        public void Open_ShouldReturnStreamValidNames(string name)
+        public void Open_ShouldReturnStream_ForValidName(string name)
         {
             var resource = TextResource.Get(name);
             var stream = resource.Open();
