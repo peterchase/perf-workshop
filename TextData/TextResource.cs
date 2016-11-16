@@ -12,7 +12,7 @@
     /// </summary>
     public class TextResource
     {
-        private static readonly Lazy<IReadOnlyDictionary<string, TextResource>> All = new Lazy<IReadOnlyDictionary<string, TextResource>>(FindAll);
+        private static readonly Lazy<IReadOnlyDictionary<string, TextResource>> LazyAll = new Lazy<IReadOnlyDictionary<string, TextResource>>(FindAll);
         private static readonly Assembly Assembly = typeof(TextResource).Assembly;
         private static readonly Regex NameRegex = new Regex(@".*\.(?<name>\w+)\.\w+$", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
@@ -23,9 +23,11 @@
             this.path = path;
         }
 
+        public static IReadOnlyDictionary<string, TextResource> All => LazyAll.Value;
+
         public static TextResource Get(string name)
         {
-            return All.Value[name];
+            return LazyAll.Value[name];
         }
 
         /// <summary>
