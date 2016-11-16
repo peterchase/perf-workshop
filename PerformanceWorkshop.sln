@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionChoice1", "CollectionChoice1\CollectionChoice1.csproj", "{4A58DC1D-EA86-4F5A-BDCE-1EB09DD28082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise1", "Exercise1\Exercise1.csproj", "{4A58DC1D-EA86-4F5A-BDCE-1EB09DD28082}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextData", "TextData\TextData.csproj", "{A7797EEC-3F0C-4514-A4D5-4FFC9965B526}"
 EndProject
