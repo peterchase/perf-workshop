@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercises", "Exercises\Exer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextData", "TextData\TextData.csproj", "{A7797EEC-3F0C-4514-A4D5-4FFC9965B526}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure - Do Not Modify During Workshop", "Infrastructure - Do Not Modify During Workshop", "{44B11ECE-D7F2-4286-927A-07EE4F87856E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7797EEC-3F0C-4514-A4D5-4FFC9965B526} = {44B11ECE-D7F2-4286-927A-07EE4F87856E}
 	EndGlobalSection
 EndGlobal
