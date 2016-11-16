@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using TextData;
     using TextData.Extensions;
@@ -27,23 +28,26 @@
             }
 
             public IReadOnlyCollection<string> Words
-                => resources.SelectMany(GetWords).Distinct(WordComparer).ToList();
+                => resources.SelectMany(ReadWords).Distinct(WordComparer).ToList();
 
             public IReadOnlyCollection<int> GetPositions(string word)
             {
                 return resources
-                    .SelectMany(GetWords)
+                    .SelectMany(ReadWords)
                     .Select((w, i) => new { Word = w, Index = i })
-                    .Where(iw => WordComparer.Equals(word, iw.Word))
-                    .Select(iw => iw.Index)
+                    .Where(wi => WordComparer.Equals(word, wi.Word))
+                    .Select(wi => wi.Index)
                     .ToList();
             }
 
-            private IEnumerable<string> GetWords(TextResource resource)
+            private IEnumerable<string> ReadWords(TextResource resource)
             {
-                using (var stream = resource.Open())
+                using (Stream stream = resource.Open())
                 {
-                    return wordReader.Read(stream);
+                    foreach (string word in wordReader.Read(stream))
+                    {
+                        yield return word;
+                    }
                 }
             }
         }

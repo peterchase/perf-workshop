@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ex1\Extensions\WordPositionsFactoryExtensions.cs" />
     <Compile Include="Ex1\IWordPositionsFactory.cs" />
     <Compile Include="Ex1\IWordPositions.cs" />
     <Compile Include="Ex1\SimpleWordPositionsFactory.cs" />
+    <Compile Include="Ex1\Tests\TestUtil.cs" />
+    <Compile Include="Ex1\Tests\WordPositionsFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +73,9 @@
       <Project>{A7797EEC-3F0C-4514-A4D5-4FFC9965B526}</Project>
       <Name>TextData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
