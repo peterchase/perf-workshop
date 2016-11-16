@@ -40,5 +40,18 @@
                 Assert.That(result, Is.EqualTo(expected));
             }
         }
+
+        [TestCase("'Don't panic'", "Don't", "panic")]
+        [TestCase("Say: 'Don't panic'", "Say", "Don't", "panic")]
+        [TestCase("My dog- wins", "My", "dog", "wins")]
+        public void Read_ShouldExcludeApostrophesAndDashes_WhenTheyAreNotPartOfWord(string input, params string[] expected)
+        {
+            var wordReader = new WordReader();
+            using (var reader = new StringReader(input))
+            {
+                var result = wordReader.Read(reader).ToArray();
+                Assert.That(result, Is.EqualTo(expected));
+            }
+        }
     }
 }
