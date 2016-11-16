@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Ex1\IWordPositionsFactory.cs" />
     <Compile Include="Ex1\IWordPositions.cs" />
+    <Compile Include="Ex1\SimpleWordPositionsFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

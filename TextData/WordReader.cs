@@ -9,24 +9,13 @@
     /// delimits words. Dashes and apostrophes do not delimit words when they are within
     /// a word, so "don't" and "ice-cream" are one word each.
     /// </summary>
-    public class WordReader
+    public class WordReader : IWordReader
     {
         private readonly Encoding encoding;
 
         public WordReader(Encoding encoding = null)
         {
             this.encoding = encoding ?? Encoding.UTF8;
-        }
-
-        public IEnumerable<string> Read(Stream stream)
-        {
-            using (var reader = new StreamReader(stream))
-            {
-                foreach (string word in Read(reader))
-                {
-                    yield return word;
-                }
-            }
         }
 
         public IEnumerable<string> Read(TextReader reader)
