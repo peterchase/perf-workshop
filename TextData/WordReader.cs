@@ -4,6 +4,11 @@
     using System.IO;
     using System.Text;
 
+    /// <summary>
+    /// Extracts the human-readable words from a given stream. Whitespace and punctuation
+    /// delimits words. Dashes and apostrophes do not delimit words when they are within
+    /// a word, so "don't" and "ice-cream" are one word each.
+    /// </summary>
     public class WordReader
     {
         private readonly Encoding encoding;
