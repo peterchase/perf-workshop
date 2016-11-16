@@ -7,8 +7,8 @@
     <ProjectGuid>{4A58DC1D-EA86-4F5A-BDCE-1EB09DD28082}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CollectionChoice1</RootNamespace>
-    <AssemblyName>CollectionChoice1</AssemblyName>
+    <RootNamespace>Exercises</RootNamespace>
+    <AssemblyName>Exercises</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
