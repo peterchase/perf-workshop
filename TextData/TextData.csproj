@@ -50,7 +50,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TextResourceTests.cs" />
+    <Compile Include="Tests\WordReaderTests.cs" />
     <Compile Include="TextResource.cs" />
+    <Compile Include="WordReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TextFiles\HackersDictionary.txt" />
