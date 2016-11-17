@@ -9,5 +9,10 @@
         {
             return factory.Create(resourceNames.Select(AssemblyTextResource.Get).ToList());
         }
+
+        public static IWordPositions Create(this IWordPositionsFactory factory, params IResource[] resources)
+        {
+            return factory.Create(resources);
+        }
     }
 }

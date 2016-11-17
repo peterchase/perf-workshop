@@ -1,4 +1,4 @@
-﻿namespace Exercises.Ex1.Tests
+﻿namespace Exercises
 {
     using System;
     using System.Collections.Generic;
