@@ -5,6 +5,6 @@
 
     public interface IWordPositionsFactory
     {
-        IWordPositions Create(IReadOnlyCollection<TextResource> resources);
+        IWordPositions Create(IReadOnlyCollection<IResource> resources);
     }
 }

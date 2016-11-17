@@ -7,7 +7,7 @@
     {
         public static IWordPositions Create(this IWordPositionsFactory factory, params string[] resourceNames)
         {
-            return factory.Create(resourceNames.Select(TextResource.Get).ToList());
+            return factory.Create(resourceNames.Select(AssemblyTextResource.Get).ToList());
         }
     }
 }

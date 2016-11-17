@@ -10,22 +10,22 @@
     /// <summary>
     /// Represents some text built into the assembly.
     /// </summary>
-    public class TextResource
+    public class AssemblyTextResource : IResource
     {
-        private static readonly Lazy<IReadOnlyDictionary<string, TextResource>> LazyAll = new Lazy<IReadOnlyDictionary<string, TextResource>>(FindAll);
-        private static readonly Assembly Assembly = typeof(TextResource).Assembly;
+        private static readonly Lazy<IReadOnlyDictionary<string, AssemblyTextResource>> LazyAll = new Lazy<IReadOnlyDictionary<string, AssemblyTextResource>>(FindAll);
+        private static readonly Assembly Assembly = typeof(AssemblyTextResource).Assembly;
         private static readonly Regex NameRegex = new Regex(@".*\.(?<name>\w+)\.\w+$", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
         private readonly string path;
 
-        private TextResource(string path)
+        private AssemblyTextResource(string path)
         {
             this.path = path;
         }
 
-        public static IReadOnlyDictionary<string, TextResource> All => LazyAll.Value;
+        public static IReadOnlyDictionary<string, AssemblyTextResource> All => LazyAll.Value;
 
-        public static TextResource Get(string name)
+        public static AssemblyTextResource Get(string name)
         {
             return LazyAll.Value[name];
         }
@@ -45,9 +45,9 @@
             return stream;
         }
 
-        private static IReadOnlyDictionary<string, TextResource> FindAll()
+        private static IReadOnlyDictionary<string, AssemblyTextResource> FindAll()
         {
-            return Assembly.GetManifestResourceNames().ToDictionary(ExtractName, n => new TextResource(n));
+            return Assembly.GetManifestResourceNames().ToDictionary(ExtractName, n => new AssemblyTextResource(n));
         }
 
         private static string ExtractName(string path)

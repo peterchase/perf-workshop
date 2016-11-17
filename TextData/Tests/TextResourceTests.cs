@@ -8,7 +8,7 @@ namespace TextData.Tests
         [Test]
         public void All_ShouldReturnSomeResources()
         {
-            Assert.That(TextResource.All, Is.Not.Empty.And.Not.Null);
+            Assert.That(AssemblyTextResource.All, Is.Not.Empty.And.Not.Null);
         }
 
         [TestCase("HackersDictionary")]
@@ -16,7 +16,7 @@ namespace TextData.Tests
         [TestCase("Lovecraft")]
         public void Get_ShouldReturnResource_ForValidName(string name)
         {
-            Assert.That(TextResource.Get(name), Is.Not.Null);
+            Assert.That(AssemblyTextResource.Get(name), Is.Not.Null);
         }
 
         [TestCase("HackersDictionary")]
@@ -24,7 +24,7 @@ namespace TextData.Tests
         [TestCase("Lovecraft")]
         public void Open_ShouldReturnStream_ForValidName(string name)
         {
-            var resource = TextResource.Get(name);
+            var resource = AssemblyTextResource.Get(name);
             var stream = resource.Open();
             stream.Dispose();
         }

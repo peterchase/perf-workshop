@@ -9,7 +9,7 @@
 
     public class SimpleWordPositionsFactory : IWordPositionsFactory
     {
-        public IWordPositions Create(IReadOnlyCollection<TextResource> resources)
+        public IWordPositions Create(IReadOnlyCollection<IResource> resources)
         {
             return new SimpleWordPositions(new WordReader(), resources);
         }
@@ -19,9 +19,9 @@
             private static readonly StringComparer WordComparer = StringComparer.InvariantCultureIgnoreCase;
 
             private readonly IWordReader wordReader;
-            private readonly IReadOnlyCollection<TextResource> resources;
+            private readonly IReadOnlyCollection<IResource> resources;
 
-            public SimpleWordPositions(IWordReader wordReader, IReadOnlyCollection<TextResource> resources)
+            public SimpleWordPositions(IWordReader wordReader, IReadOnlyCollection<IResource> resources)
             {
                 this.wordReader = wordReader;
                 this.resources = resources;
@@ -40,7 +40,7 @@
                     .ToList();
             }
 
-            private IEnumerable<string> ReadWords(TextResource resource)
+            private IEnumerable<string> ReadWords(IResource resource)
             {
                 using (Stream stream = resource.Open())
                 {

@@ -16,7 +16,7 @@
         public void Read_ShouldReturnSomeWords_ForValidTextResourceStream()
         {
             var reader = new WordReader();
-            var resource = TextResource.Get("HackersDictionary");
+            var resource = AssemblyTextResource.Get("HackersDictionary");
             using (var stream = resource.Open())
             {
                 bool hasWords = false;
